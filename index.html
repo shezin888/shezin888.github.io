@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" />
+
+  <title>Shezin Saleem</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-S6dJr6uVb1o6w3y4d4mXq2Yq8h8u0jQ7yq2bQW5I3q0x0b1gWJwH8jJb3U4Jx1qYl9cB3jJw5b0l8lxVQ3G8Mg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li class="logo">
+        <img src="assets/img/logo.png" alt="Logo">
+      </li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+
+  <!-- Sections -->
+
+  <!-- START HOME -->
+
+  <section id="home">
+    <img src="assets/img/profile.png" alt="Shezin Saleem" class="profile-pic" />
+
+    <h1>Shezin Saleem</h1>
+    <h3 class="tagline">AI/ML Engineer | LLMs & Computer Vision | Cloud & DevOps</h3>
+
+    <p class="lead">
+      Hi, I’m <strong>Shezin Saleem</strong>, a recent graduate in Applied Computer Science with hands-on
+      experience in <strong>AI/ML, Large Language Models, Computer Vision, Cloud, and DevOps</strong>.
+      I’ve built impactful projects ranging from predictive maintenance with generative AI to
+      real-time gym tracking systems. <br><br>
+      <span class="highlight">Currently, I’m seeking full-time opportunities</span> where I can apply my
+      technical expertise to solve real-world problems and contribute to innovative AI solutions.
+    </p>
+
+    <div class="badges">
+      <span>AI/ML • LLMs & Retrieval</span>
+      <span>Computer Vision (OpenCV, GANs)</span>
+      <span>FastAPI • Docker • GCP</span>
+      <span>PyTorch • TensorFlow</span>
+      <span>Cloud & DevOps</span>
+    </div>
+
+    <div class="cta">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn ghost" href="assets/Shezin_Saleem_Resume.pdf" target="_blank" download>Download Resume</a>
+      <a class="btn ghost" href="#contact">Contact Me</a>
+    </div>
+  </section>
+
+
+  <!-- END HOME -->
+
+
+  <!-- START ABOUT -->
+  <section id="about" class="solo">
+    <h2>About</h2>
+
+    <div class="about-card two-col">
+      <!-- LEFT: text -->
+      <div class="about-text">
+        <p>
+          I’m <strong>Shezin Saleem</strong> - an AI & Machine Learning Engineer with a
+          Master’s in Applied Computer Science from Concordia University. I design and ship
+          practical AI: from data pipelines and model training to fast APIs and polished UX.
+        </p>
+
+        <p>
+          My focus areas are <strong>computer vision</strong>, <strong>LLMs & retrieval</strong>,
+          and <strong>ML systems on cloud</strong> (Python, FastAPI, Docker, GCP).
+          I enjoy turning research ideas into reliable, maintainable products.
+        </p>
+
+        <p>
+          <span class="pill open">Open to full-time roles</span> in AI/ML, applied AI, or platform
+          engineering, especially where I can own models end-to-end and collaborate closely with product.
+        </p>
+
+        <!-- skill tags -->
+        <div class="about-badges">
+          <span>Python • FastAPI</span>
+          <span>LLMs & Retrieval</span>
+          <span>Computer Vision (OpenCV)</span>
+          <span>PyTorch • TensorFlow</span>
+          <span>Docker • GCP</span>
+        </div>
+
+        <!-- highlights (kept short + scannable) -->
+        <ul class="about-list">
+          <li>End-to-end ML: data → training → evaluation → API → deploy.</li>
+          <li>Comfortable with prompt/retrieval design, latency, and observability.</li>
+          <li>Bias toward clean interfaces, profiling, and measurable impact.</li>
+        </ul>
+
+        <div class="cta">
+          <a class="btn primary" href="#projects">See Projects</a>
+          <a class="btn ghost" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: media -->
+      <div class="about-media">
+        <div id="aboutLottie" class="about-anim"></div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- END ABOUT-->
+
+  <!-- START PROJECT-->
+  
+<section id="projects" class="solo">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+
+    <!-- Multi-Agent Chatbot -->
+    <div class="project-card">
+      <h3>Multi-Agent Chatbot</h3>
+      <p>AI chatbot capable of retrieving information from websites and PDFs with accurate, grounded responses.</p>
+      <div class="project-badges">
+        <span>LangChain</span>
+        <span>Ollama</span>
+        <span>ChromaDB</span>
+        <span>FastAPI</span>
+        <span>Streamlit</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/shezin888/Multi-Agent-RAG-Chatbot-System" target="_blank" class="btn ghost">View Code</a>
+      </div>
+    </div>
+
+    <!-- EcogenAI -->
+    <div class="project-card">
+      <h3>EcogenAI - Aircraft Predictive Maintenance</h3>
+      <p>Vision-based predictive maintenance with GANs and LLMs for defect and fault detection in aircraft.</p>
+      <div class="project-badges">
+        <span>Python</span>
+        <span>OpenCV</span>
+        <span>GANs</span>
+        <span>LLMs</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/shezin888/EcoGenAI---Aircraft-Predictive-Maintenance" target="_blank" class="btn ghost">View Code</a>
+        <a href="https://ecogenai---aircraft-predictive-maintenance-hxnfh4io9nxtheerlez.streamlit.app/" target="_blank" class="btn primary">Live Demo</a>
+
+      </div>
+    </div>
+
+    <!-- Tomato Leaf Disease Detection -->
+    <div class="project-card">
+      <h3>Tomato Leaf Disease Detection</h3>
+      <p>CNN-based classification of tomato leaf diseases using transfer learning with ResNet18, MobileNetV2, and VGG16.</p>
+      <div class="project-badges">
+        <span>Python</span>
+        <span>TensorFlow</span>
+        <span>ResNet18</span>
+        <span>MobileNetV2</span>
+        <span>VGG16</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/aswiinraviprakash/TomatoLeafDiseaseCNN" target="_blank" class="btn ghost">View Code</a>
+      </div>
+    </div>
+
+    <!-- TrainERAI -->
+    <div class="project-card">
+      <h3>TrainERAI - Live Gym Tracker</h3>
+      <p>Real-time exercise posture tracking using joint detection and computer vision for AI-powered gym assistance.</p>
+      <div class="project-badges">
+        <span>Python</span>
+        <span>OpenCV</span>
+        <span>MediaPipe</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/shezin888/TrainERAI" target="_blank" class="btn ghost">View Code</a>
+        <a href="https://www.researchgate.net/publication/369214774_TrainERAI_-_Live_Gym_Tracker_using_Artificial_Intelligence#:~:text=%22TrainERAI%2DLive%20Gym%20Tracker%20Using,machine%20learning%20algorithms.%20..." 
+       target="_blank" class="btn primary">Read Paper</a>
+      </div>
+    </div>
+
+    <!-- Hand Sign Recognition -->
+    <div class="project-card">
+      <h3>Hand Sign Recognition System</h3>
+      <p>AI model to recognize hand signs for integration in video call apps, supporting communication for the mute community.</p>
+      <div class="project-badges">
+        <span>Python</span>
+        <span>TensorFlow</span>
+        <span>OpenCV</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/shezin888/hand-sign-classification" target="_blank" class="btn ghost">View Code</a>
+      </div>
+    </div>
+
+    <!-- Next Gen Question paper -->
+    <div class="project-card">
+    <h3>Next-Generation Assessments</h3>
+    <p>Automatic Question Paper Generation system powered by NLP with topic coverage optimization for modern classrooms.</p>
+    <div class="project-badges">
+      <span>Python</span>
+      <span>NLTK</span>
+      <span>FastAPI</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/shezin888/Question-Generator" target="_blank" class="btn ghost">View Code</a>
+      <a href="https://www.researchgate.net/publication/369580233_Next-Generation_Assessments_Automatic_Question_Paper_Generation_for_Modern_Classrooms" 
+        target="_blank" class="btn primary">Read Paper</a>
+    </div>
+  </div>
+
+
+    <!-- Face Mask Detection -->
+    <div class="project-card">
+      <h3>Face Mask Detection</h3>
+      <p>Machine learning model for face mask detection, trained with extended datasets for higher accuracy.</p>
+      <div class="project-badges">
+        <span>Python</span>
+        <span>TensorFlow</span>
+        <span>OpenCV</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/shezin888/Mask-detector" target="_blank" class="btn ghost">View Code</a>
+      </div>
+    </div>
+
+    <!-- Quad Squad -->
+    <div class="project-card">
+      <h3>Quad Squad - Chat Room Web Application</h3>
+      <p>Real-time chatroom app with live message tracking and unique room IDs for different chat rooms.</p>
+      <div class="project-badges">
+        <span>Python</span>
+        <span>Flask</span>
+        <span>JavaScript</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/shezin888/Quad-Squad" target="_blank" class="btn ghost">View Live</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- END PROJECT-->
+
+
+  <!-- START PUBLICATIONS-->
+
+
+  <section id="publications" class="solo">
+    <h2>Publications</h2>
+
+    <div class="publications-grid">
+
+      <!-- Pub 1 -->
+      <article class="pub-card">
+        <header class="pub-head">
+          <div class="pub-icon" aria-hidden="true">📄</div>
+          <h3>Next-Generation Assessments: Automatic Question Paper Generation for Modern Classrooms</h3>
+        </header>
+
+
+        <p class="pub-desc">
+          NLP-powered system that automates question paper creation with topic coverage control.
+        </p>
+
+        <div class="pub-tags">
+          <span>NLP</span>
+          <span>Education AI</span>
+          <span>Assessment</span>
+        </div>
+
+        <a
+          href="https://dx.doi.org/10.2139/ssrn.4392467"
+          target="_blank"
+          rel="noopener"
+          class="btn ghost"
+          aria-label="Read paper on SSRN: Next-Generation Assessments"
+        >View on SSRN</a>
+         <a href="https://www.researchgate.net/publication/369580233_Next-Generation_Assessments_Automatic_Question_Paper_Generation_for_Modern_Classrooms" target="_blank" class="btn ghost">View on ResearchGate</a>
+      </article>
+
+      <!-- Pub 2 -->
+      <article class="pub-card">
+        <header class="pub-head">
+          <div class="pub-icon" aria-hidden="true">📄</div>
+          <h3>TrainERAI – Live Gym Tracker using Artificial Intelligence</h3>
+        </header>
+
+
+        <p class="pub-desc">
+          Real-time exercise form detection with computer vision for an AI workout assistant.
+        </p>
+
+        <div class="pub-tags">
+          <span>Computer Vision</span>
+          <span>Pose Estimation</span>
+          <span>Real-time AI</span>
+        </div>
+
+        <a
+          href="https://dx.doi.org/10.2139/ssrn.4383182"
+          target="_blank"
+          rel="noopener"
+          class="btn ghost"
+          aria-label="Read paper on SSRN: TrainERAI – Live Gym Tracker"
+        >View on SSRN</a>
+        <a href="https://www.researchgate.net/publication/369214774_TrainERAI_-_Live_Gym_Tracker_using_Artificial_Intelligence" target="_blank" class="btn ghost">View on ResearchGate</a>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- END Publications-->
+
+
+  <!-- START CONTACT -->
+<section id="contact" class="solo">
+  <h2>Contact</h2>
+
+  <div class="contact-card">
+    <p class="contact-lead">
+      I’m always open to meaningful conversations - whether it’s
+      <strong>AI/ML collaborations</strong>, <strong>research</strong>, or
+      <strong>full-time opportunities</strong>. <br>Feel free to reach out!
+    </p>
+
+    <div class="contact-links">
+      <!-- Email (pill with address) -->
+      <a class="pill email" href="mailto:shezins888@gmail.com" aria-label="Email Shezin">
+        <i class="fa-solid fa-envelope"></i>
+        <span>shezins888@gmail.com</span>
+      </a>
+
+      <!-- Round logo buttons -->
+      <a class="pill icon github" href="https://github.com/shezin888" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+
+      <a class="pill icon linkedin" href="https://www.linkedin.com/in/shezinsaleem" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+
+      <a class="pill icon researchgate" href="https://www.researchgate.net/profile/Shezin-Saleem" target="_blank" rel="noopener" aria-label="ResearchGate">
+        <i class="fa-brands fa-researchgate"></i>
+      </a>
+
+      <!-- SSRN doesn’t have a brand icon in FA Free: use a book/cap -->
+      <a class="pill icon ssrn" href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=5611846" target="_blank" rel="noopener" aria-label="SSRN">
+        <i class="fa-solid fa-book"></i>
+      </a>
+
+      <a class="pill icon resume" href="assets/Shezin_Saleem_Resume.pdf" target="_blank" download aria-label="Download Resume">
+        <i class="fa-solid fa-file-arrow-down"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <!-- END Contact-->
+
+
+  <!-- particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+  (function () {
+    const opts = {
+      particles: {
+        number: {
+          value: 110,                               // ↑ more particles (desktop)
+          density: { enable: true, value_area: 800 }
+        },
+        color: { value: ["#60a5fa", "#2dd4bf", "#94a3b8"] },
+        shape: { type: "circle" },
+        opacity: { value: 0.45 },
+        size: { value: 2.5, random: true },        // slightly smaller so it feels lighter
+        line_linked: {
+          enable: true,
+          distance: 130,                            // closer links = tighter web
+          color: "#8fb3ff",
+          opacity: 0.35,                            // a bit brighter links
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2.4,                               // ↑ faster motion
+          direction: "none",
+          straight: false,
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        detect_on: "window",                        // keeps repel working under content
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 220, duration: 0.25 }, // stronger/faster repel
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    };
+
+    // Mobile/low-power tweak (keeps it smooth)
+    if (window.innerWidth < 768) {
+      opts.particles.number.value = 50;
+      opts.particles.move.speed = 1.4;
+      opts.particles.line_linked.opacity = 0.28;
+    }
+
+    particlesJS("particles-js", opts);
+  })();
+  </script>
+
+
+    <!-- Lottie player -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+  <!-- Init the About animation -->
+  <script>
+    (function () {
+      const el = document.getElementById('aboutLottie');
+      if (!el) return;
+
+      lottie.loadAnimation({
+        container: el,
+        renderer: 'svg',   // crisp, lightweight
+        loop: true,
+        autoplay: true,
+        path: 'assets/lottie/ai-build.json'  // <-- your JSON path
+      });
+    })();
+  </script>
+
+
+
+
+</body>
+</html>

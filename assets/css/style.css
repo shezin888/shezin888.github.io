@@ -1,0 +1,844 @@
+/* ---------- Base ---------- */
+:root{
+  --navH: 72px;          /* desktop nav height incl. padding/shadow */
+  --section-pad-top:  calc(var(--navH) + 28px);
+  --section-pad-bot:  88px;
+}
+
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #fff;
+  background: #0b0f17;
+  overflow: hidden; /* one-screen feel */
+}
+
+/* ---------- Particles canvas (behind content) ---------- */
+#particles-js{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;                  /* below content but visible */
+  background: transparent;
+}
+nav, section { position: relative; z-index: 2; }
+
+/* ---------- Navigation (glassy teal→blue pill) ---------- */
+nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 10px 24px;
+  border-radius: 999px;
+  backdrop-filter: blur(10px) saturate(140%);
+  background: linear-gradient(135deg, rgba(45, 212, 191, .22), rgba(96, 165, 250, .22));
+  border: 1px solid rgba(255, 255, 255, .10);
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+}
+nav ul {
+  display: flex;
+  align-items: center; /* aligns logo & text vertically */
+  gap: 18px; /* spacing between items */
+  list-style: none;
+}
+
+.logo img {
+  height: 34px; /* adjust size as needed */
+  display: block; /* remove inline gap */
+}
+nav a {
+  text-decoration: none;
+  color: #e7edf6;
+  font-weight: 600;
+  transition: color .2s ease, opacity .2s ease;
+}
+nav a:hover, nav a:focus-visible { color: #2dd4bf; }
+
+/* Optional logo inside nav */
+.logo img { height: 34px; margin-right: 14px; display: block; }
+
+/* ---------- Sections / Hero ---------- */
+/* ===== Contact (scoped) ===== */
+/* Cards/grids collapse to one column on phones */
+
+
+
+
+.projects-grid{ display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px; }
+@media (max-width: 900px){ .projects-grid{ grid-template-columns: 1fr; } }
+.about-card.two-col{ display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; }
+@media (max-width: 900px){ .about-card.two-col{ grid-template-columns: 1fr; } .about-media{ order:2; } }
+
+/* Mobile polish (≈390×844 and down) */
+@media (max-width: 600px){
+  :root{ --navH: 60px; }  /* smaller sticky nav on phones */
+
+  /* nav chip shrinks a bit */
+  nav{ padding: 8px 14px; border-radius: 16px; }
+  .logo img{ height: 26px; }
+
+  /* Titles & hero */
+  h1{ font-size: clamp(26px, 7vw, 34px); line-height: 1.1; }
+  .section-title, h2{ font-size: clamp(20px, 5.5vw, 26px); }
+  .profile-pic{ width: 140px; height: 140px; }
+
+  /* Buttons stack nicely */
+  .cta{ flex-direction: column; gap: 10px; align-items:center; }
+  .btn{ width: 100%; max-width: 340px; }
+
+  /* Badges wrap tighter */
+  .badges span, .project-badges span{
+    font-size: 12px; padding: 6px 10px;
+  }
+
+  /* Project/publication cards get softer padding */
+  .project-card, .pub-card{ padding: 16px; }
+}
+
+
+/* Section spacing to center titles better */
+/* Generic sections (NOT full-screen) */
+section{
+  min-height: auto;
+  padding: var(--section-pad-top) 20px var(--section-pad-bot);
+  scroll-margin-top: calc(var(--navH) + 16px); /* so headings aren't hidden by the nav */
+}
+
+/* Keep only the hero full-height */
+#home{
+  min-height: 100vh;
+  padding-top: calc(var(--navH) + 40px);
+}
+
+
+.section-spacing {
+  padding: 100px 20px; /* pushes content down and gives breathing room */
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px; /* space between title and project grid */
+  font-weight: 700;
+  color: #fff; /* keeps it matching the dark theme */
+}
+
+/* Optional: keep projects aligned nicely */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto; /* center the grid */
+}
+
+#contact {
+  padding: 80px 20px;              /* spacing inside this section only */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact .contact-title {
+  margin: 0 0 20px;
+  font-size: clamp(22px, 3vw, 30px);
+  /* no color set: inherits your global heading color */
+}
+
+#contact .contact-wrap {
+  width: 100%;
+  max-width: 640px;
+}
+
+#contact .contact-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+}
+
+#contact .contact-lead {
+  color: #b5c0cf;                  /* matches your other section copy */
+  margin: 0 0 14px;
+}
+
+#contact .contact-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Pills */
+#contact .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Email pill shows address */
+#contact .pill.email { background: #ef4444; }          /* red */
+#contact .pill.icon  { width: 42px; height: 42px; 
+                       justify-content: center; padding: 0; }
+
+/* Brand colors */
+#contact .pill.github   { background: #111827; }       /* near-black */
+#contact .pill.linkedin { background: #0a66c2; }       /* LinkedIn blue */
+
+#contact .pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.35);
+}
+
+
+#publications {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.pub-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pub-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 32px rgba(0, 0, 0, 0.45);
+}
+
+.pub-card h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.pub-card p {
+  font-size: 14px;
+  color: #b5c0cf;
+  margin-bottom: 12px;
+}
+
+.pub-card .btn {
+  font-size: 13px;
+  padding: 6px 14px;
+}
+
+
+#projects {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 32px rgba(0, 0, 0, 0.45);
+}
+
+.project-card h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.project-card p {
+  font-size: 14px;
+  color: #b5c0cf;
+  margin-bottom: 12px;
+}
+
+.project-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.project-badges span {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #dbe6f3;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.project-links .btn {
+  font-size: 13px;
+  padding: 6px 14px;
+}
+
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  animation: fadeIn .8s ease;
+}
+
+h1 {
+  font-size: clamp(28px, 4.2vw, 36px);
+  letter-spacing: .2px;
+}
+
+.lead {
+  color: #b5c0cf;
+  max-width: 760px;
+  margin: 4px auto 8px;
+  padding: 0 16px;
+}
+
+/* ---- About section ---- */
+#about h2 {
+  font-size: clamp(22px, 3.2vw, 28px);
+  margin-bottom: 10px;
+}
+
+.about-card {
+  max-width: 900px;
+  padding: 22px 22px 24px;
+  margin: 0 16px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.35);
+  text-align: left;
+  color: #d6dee9;
+}
+
+.about-card p { margin: 8px 0 10px; }
+.about-card strong { color: #fff; }
+
+/* two-column about card */
+.about-card.two-col {
+  display: grid;
+  grid-template-columns: 1.25fr .85fr;
+  gap: 18px;
+  align-items: center;
+}
+.about-text p {
+  font-size: 15.5px;
+  line-height: 1.65;
+  margin-bottom: 10px;
+  color: #e2e8f0;
+}
+
+.about-text strong {
+  color: #fff;
+}
+
+.about-badges span {
+  font-size: 13.5px;
+}
+
+.about-list li {
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.about-card {
+  gap: 20px;
+}
+
+.about-text { min-width: 0; } /* allows text to wrap nicely */
+.about-links {
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  margin: 8px 0 14px; color: #c8d4e3;
+}
+.about-links a { color: #dbe6f3; text-decoration: none; border-bottom: 1px dashed rgba(219,230,243,.35); }
+.about-links a:hover { color: #2dd4bf; border-bottom-color: transparent; }
+
+/* media panel */
+.about-media {
+  display: grid; place-items: center;
+  padding: 10px;
+  background: radial-gradient(600px 300px at 60% 40%, rgba(96,165,250,.10), transparent 60%),
+              rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+}
+
+.about-anim {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 14px 32px rgba(0,0,0,.45);
+  /* subtle glow ring that matches your theme */
+  outline: 2px solid rgba(45,212,191,.35);
+  outline-offset: -8px;
+}
+
+/* stack on mobile */
+@media (max-width: 900px) {
+  .about-card.two-col {
+    grid-template-columns: 1fr;
+  }
+  .about-media { order: -1; } /* media first on mobile looks nice; remove if you prefer text first */
+  .about-anim { max-width: 280px; }
+}
+
+/* “Open to opportunities” pill */
+.pill {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12.5px;
+  vertical-align: middle;
+}
+.pill.open {
+  color: #06221e;
+  background: linear-gradient(135deg, #2dd4bf, #60a5fa);
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+
+/* tech badges */
+.about-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 14px;
+}
+.about-badges span {
+  font-size: 13px;
+  color: #dbe6f3;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+/* bullets */
+.about-list {
+  margin: 6px 0 16px 18px;
+  display: grid;
+  gap: 6px;
+}
+.about-list li { line-height: 1.5; }
+
+/* responsive */
+@media (max-width: 680px) {
+  .about-card { padding: 18px; }
+}
+
+
+/* Profile */
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #2dd4bf;
+  margin-bottom: 14px;
+  box-shadow: 0 0 20px rgba(45,212,191,.55);
+}
+
+/* Skills/stack badges */
+.badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 8px 0 14px;
+}
+.badges span {
+  font-size: 13px;
+  color: #dbe6f3;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+/* ---------- Buttons ---------- */
+.cta { display: flex; gap: 12px; justify-content: center; }
+.btn {
+  display: inline-block;
+  padding: 11px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform .2s ease, box-shadow .2s ease;
+  will-change: transform;
+}
+.btn.primary {
+  color: #071018;
+  background: linear-gradient(135deg, #2dd4bf, #60a5fa);
+  box-shadow: 0 10px 22px rgba(0,0,0,.35);
+}
+.btn.ghost {
+  color: #e7edf6;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+}
+.btn:hover, .btn:focus-visible { transform: translateY(-2px); }
+
+
+/* ---------- MOBILE & TABLET RESPONSIVE ---------- */
+
+/* Make anchor jumps account for fixed nav on small screens */
+section { scroll-margin-top: 96px; }
+
+/* Tablet down */
+@media (max-width: 768px) {
+
+  /* allow vertical scrolling on mobile, no sideways scroll */
+  html, body { height: auto; }
+  body { overflow-y: auto; overflow-x: hidden; }
+
+  /* particles shouldn’t block taps on mobile */
+  #particles-js { pointer-events: none; }
+
+  /* nav pill: tighter & readable */
+  nav {
+    top: 12px;
+    padding: 8px 14px;
+    border-radius: 999px;
+  }
+  nav ul { gap: 12px; }
+  nav a { font-size: 14px; }
+
+  /* brand/logo size */
+  .brand img,
+  .logo img { height: 26px; }
+
+  /* section headings unified */
+  .section-title,
+  #about h2, #projects h2, #publications h2, #contact h2 {
+    font-size: 2rem;
+    margin: 0 0 28px;
+    text-align: center;
+  }
+
+  /* hero */
+  #home { padding: 90px 16px 40px; min-height: 92vh; }
+  .profile-pic { width: 140px; height: 140px; }
+  h1 { font-size: clamp(26px, 6vw, 34px); }
+  .lead { font-size: 15px; max-width: 28rem; margin: 8px auto 16px; }
+
+  /* badges & buttons */
+  .badges { gap: 8px; padding: 0 6px; }
+  .badges span { font-size: 12px; padding: 6px 8px; }
+  .cta { gap: 10px; }
+  .btn { padding: 10px 16px; }
+  .btn.primary, .btn.ghost { width: 100%; max-width: 320px; }
+
+  /* about: stack columns */
+  .about-card.two-col { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 16px; 
+    padding: 16px; 
+  }
+  .about-text { font-size: 15px; }
+  .about-anim { width: 100%; height: 220px; }
+
+  /* projects: one column grid, centered */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 12px;
+  }
+  .project-card { padding: 16px; }
+
+  /* publications: single column too */
+  .pubs-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 12px;
+  }
+
+  /* contact card: tighter & centered */
+  .contact-card {
+    width: min(92vw, 560px);
+    padding: 18px 16px;
+    margin: 0 auto;
+  }
+  .contact-icons { gap: 12px; }
+}
+
+/* Small phones (iPhone SE/older Android widths) */
+@media (max-width: 430px) {
+  nav a { font-size: 13px; }
+  .section-title,
+  #about h2, #projects h2, #publications h2, #contact h2 { font-size: 1.75rem; }
+  .profile-pic { width: 128px; height: 128px; }
+  .about-anim { height: 200px; }
+}
+
+
+/* ---------- Animations ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 680px) {
+  nav { padding: 8px 14px; }
+  nav ul { gap: 14px; }
+  .profile-pic { width: 150px; height: 150px; }
+  .cta { flex-direction: column; align-items: center; }
+  .btn { width: 220px; }
+}
+
+/* 1) Make anchor jumps land nicely below the sticky nav */
+section {
+  scroll-margin-top: 110px;   /* adjust if you change nav height */
+}
+
+/* 2) Consistent section heading spacing (desktop + mobile) */
+section > h2 {
+  font-size: clamp(22px, 2.6vw, 28px);
+  line-height: 1.2;
+  margin: 0 0 24px;           /* space under the title */
+  text-align: center;
+}
+
+/* 3) Top/bottom padding for each section so titles never hug edges */
+section {
+  padding: 80px 20px;         /* desktop */
+}
+@media (max-width: 480px) {
+  section { padding: 68px 16px; }
+  section > h2 { margin-bottom: 18px; }
+}
+
+/* 4) Extra breathing room above the card grids */
+#projects .projects-grid,
+#publications .pubs-grid,
+#contact .contact-card {
+  margin-top: 12px;
+}
+
+/* 5) Ensure the particle canvas never steals pointer/scroll */
+#particles-js { pointer-events: none; }
+
+
+/* Full-screen “solo” sections so the next title never shows */
+.solo {
+  /* fill the viewport minus the pill nav height */
+  min-height: calc(100vh - var(--navH));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;            /* title sits near the top */
+  padding-top: calc(var(--navH) + 32px);  /* clear the sticky nav */
+  padding-bottom: clamp(80px, 10vh, 140px);
+}
+
+/* Nice, clean section title spacing (unified) */
+.solo > h2 {
+  margin: 0 0 28px;
+  font-size: clamp(22px, 2.6vw, 28px);
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Optional: make desktop scrolling “stop” on each section neatly */
+@media (min-width: 1024px) {
+  html, body {
+    scroll-snap-type: y proximity;
+  }
+  #home, #about, #projects, #publications, #contact {
+    scroll-snap-align: start;
+  }
+}
+
+/* On small screens keep things comfy */
+@media (max-width: 600px) {
+  .solo {
+    min-height: auto;                     /* let content grow if needed */
+    padding-top: calc(var(--navH) + 24px);
+    padding-bottom: 72px;
+  }
+}
+
+#projects.solo{
+  min-height: calc(100vh - var(--navH));
+  padding-bottom: max(12vh, 140px);
+}
+
+/* --- Publications polish --- */
+#publications .publications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.pub-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  position: relative;
+  /* subtle “academic” accent */
+  border-left: 4px solid transparent;
+  border-image: linear-gradient(180deg, #60a5fa, #2dd4bf) 1;
+}
+
+.pub-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0,0,0,.42);
+}
+
+.pub-head {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.pub-icon {
+  font-size: 20px;
+  line-height: 1;
+  opacity: .9;
+  margin-top: 2px;
+}
+
+.pub-card h3 {
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
+}
+
+.pub-meta {
+  font-size: 13px;
+  color: #9fb0c7;
+  margin: 6px 0 10px;
+}
+
+.pub-desc {
+  color: #b5c0cf;
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+
+.pub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 14px;
+}
+
+.pub-tags span {
+  font-size: 12px;
+  color: #dbe6f3;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Mobile tweak */
+@media (max-width: 480px) {
+  #publications .publications-grid { grid-template-columns: 1fr; }
+  .pub-card { padding: 16px; }
+  .pub-card h3 { font-size: 17px; }
+}
+
+/* contact layout stays as you had; just ensure the icons look right */
+#contact .contact-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Email pill with text */
+#contact .pill.email {
+  background: #ef4444;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px 14px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+/* Round logo buttons */
+#contact .pill.icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.06);
+  color: #e7edf6;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+#contact .pill.icon i { font-size: 18px; line-height: 1; }
+
+/* Brand tints (optional) */
+#contact .pill.icon.github     { background: #111827; }
+#contact .pill.icon.linkedin   { background: #0a66c2; }
+#contact .pill.icon.researchgate { background: #0cb; }  /* teal-ish RG tint */
+#contact .pill.icon.ssrn       { background: #374151; }
+#contact .pill.icon.resume     { background: #0ea5e9; }
+
+#contact .pill.icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.35);
+}
