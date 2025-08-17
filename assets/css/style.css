@@ -842,3 +842,19 @@ section {
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(0,0,0,.35);
 }
+
+.btn.live-demo {
+  background: linear-gradient(135deg, #ff6ec4, #7873f5); /* pink → purple */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(120, 115, 245, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn.live-demo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(120, 115, 245, 0.6);
+}
+
