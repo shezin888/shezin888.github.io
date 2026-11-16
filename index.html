@@ -47,23 +47,20 @@
     <img src="assets/img/profile.png" alt="Shezin Saleem" class="profile-pic" />
 
     <h1>Shezin Saleem</h1>
-    <h3 class="tagline">AI/ML Engineer | LLMs & Computer Vision | Cloud & DevOps</h3>
+    <h3 class="tagline">Generative AI Developer</h3>
 
     <p class="lead">
-      Hi, I’m <strong>Shezin Saleem</strong>, a recent graduate in Applied Computer Science with hands-on
-      experience in <strong>AI/ML, Large Language Models, Computer Vision, Cloud, and DevOps</strong>.
-      I’ve built impactful projects ranging from predictive maintenance with generative AI to
-      real-time gym tracking systems. <br><br>
-      <span class="highlight">Currently, I’m seeking full-time opportunities</span> where I can apply my
-      technical expertise to solve real-world problems and contribute to innovative AI solutions.
+      Hi, I’m <strong>Shezin Saleem</strong>, a Generative AI Developer at
+      <strong>Tata Consultancy Services</strong> in Toronto. I build production AI systems, with a focus on
+      <strong>LLMs, computer vision, and reliable API services</strong>. Previously, I worked on
+      <strong>VLM evaluation and benchmarking</strong> at Huawei Canada.
     </p>
 
     <div class="badges">
-      <span>AI/ML • LLMs & Retrieval</span>
-      <span>Computer Vision (OpenCV, GANs)</span>
-      <span>FastAPI • Docker • GCP</span>
-      <span>PyTorch • TensorFlow</span>
-      <span>Cloud & DevOps</span>
+      <span>Generative AI • LLMs</span>
+      <span>Computer Vision • VLMs</span>
+      <span>FastAPI • Docker</span>
+      <span>Production AI Systems</span>
     </div>
 
     <div class="cta">
@@ -85,37 +82,46 @@
       <!-- LEFT: text -->
       <div class="about-text">
         <p>
-          I’m <strong>Shezin Saleem</strong> - an AI & Machine Learning Engineer with a
-          Master’s in Applied Computer Science from Concordia University. I design and ship
-          practical AI: from data pipelines and model training to fast APIs and polished UX.
+          I’m <strong>Shezin Saleem</strong>, an AI/ML engineer focused on
+          <strong>LLMs, computer vision, and production AI systems</strong>. I hold a Master’s in
+          Applied Computer Science from Concordia University.
         </p>
 
-        <p>
-          My focus areas are <strong>computer vision</strong>, <strong>LLMs & retrieval</strong>,
-          and <strong>ML systems on cloud</strong> (Python, FastAPI, Docker, GCP).
-          I enjoy turning research ideas into reliable, maintainable products.
-        </p>
+        <h3 class="experience-heading">Experience</h3>
+        <ol class="experience-roadmap">
+          <li class="experience-stop current">
+            <div class="experience-meta">
+              <time datetime="2026-11">Nov 2026</time> – Present
+              <span class="experience-status">Current</span>
+            </div>
+            <h4>Generative AI Developer</h4>
+            <p class="experience-org">Tata Consultancy Services · Toronto, Ontario, Canada</p>
+            <p class="experience-note">Building production AI systems.</p>
+          </li>
+          <li class="experience-stop">
+            <div class="experience-meta">
+              <time datetime="2025-09">Sep 2025</time> – <time datetime="2026-03">Mar 2026</time>
+            </div>
+            <h4>Data Annotator - VLM Evaluation &amp; Benchmarking</h4>
+            <p class="experience-org">Huawei Canada · Markham, Ontario, Canada</p>
+            <p class="experience-note">Created QA pairs for 18 spatial reasoning tasks in Spatial4D-Bench.</p>
+          </li>
+          <li class="experience-stop">
+            <div class="experience-meta">
+              <time datetime="2025-10">Oct 2025</time> – <time datetime="2026-01">Jan 2026</time>
+            </div>
+            <h4>Volunteer AI/ML Staff</h4>
+            <p class="experience-org">Unity Health Toronto · Toronto, Ontario, Canada</p>
+            <p class="experience-note">Designed an interpretable ML pipeline for clinical screening.</p>
+          </li>
+        </ol>
 
-        <p>
-          <span class="pill open">Open to full-time roles</span> in AI/ML, applied AI, or platform
-          engineering, especially where I can own models end-to-end and collaborate closely with product.
-        </p>
-
-        <!-- skill tags -->
         <div class="about-badges">
+          <span>Generative AI • LLMs</span>
+          <span>Computer Vision • VLMs</span>
           <span>Python • FastAPI</span>
-          <span>LLMs & Retrieval</span>
-          <span>Computer Vision (OpenCV)</span>
-          <span>PyTorch • TensorFlow</span>
-          <span>Docker • GCP</span>
+          <span>Docker</span>
         </div>
-
-        <!-- highlights (kept short + scannable) -->
-        <ul class="about-list">
-          <li>End-to-end ML: data → training → evaluation → API → deploy.</li>
-          <li>Comfortable with prompt/retrieval design, latency, and observability.</li>
-          <li>Bias toward clean interfaces, profiling, and measurable impact.</li>
-        </ul>
 
         <div class="cta">
           <a class="btn primary" href="#projects">See Projects</a>
@@ -139,6 +145,39 @@
 <section id="projects" class="solo">
   <h2>Projects</h2>
   <div class="projects-grid">
+
+    <!-- SupportAI -->
+    <div class="project-card">
+      <h3>SupportAI - Multi-Agent Customer Support Assistant</h3>
+      <p>Multi-agent support assistant that combines customer records and policy documents to provide context-aware answers grounded in retrieved information.</p>
+      <div class="project-badges">
+        <span>LangGraph</span>
+        <span>Ollama</span>
+        <span>ChromaDB • RAG</span>
+        <span>SQLite • MCP</span>
+        <span>Streamlit</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/shezin888/SupportAI_MultiAgentBot" target="_blank" rel="noopener noreferrer" class="btn ghost">View Code</a>
+        <a href="https://drive.google.com/file/d/1Mrq_tfZujqJ8muFJ2dmo3StA_ioBXH9D/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn live-demo">Demo Video</a>
+      </div>
+    </div>
+
+    <!-- Lyrics2Cover -->
+    <div class="project-card">
+      <h3>Lyrics2Cover - AI-Generated Album Art</h3>
+      <p>Transforms song lyrics into custom album art by extracting mood, motifs, and visual style with Gemini, then generating images with Stable Diffusion XL.</p>
+      <div class="project-badges">
+        <span>Google Gemini</span>
+        <span>Stable Diffusion XL</span>
+        <span>Python</span>
+        <span>PyTorch • Diffusers</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/shezin888/Lyrics2Cover-AI-Generated-Album-Art" target="_blank" rel="noopener noreferrer" class="btn ghost">View Code</a>
+        <a href="https://huggingface.co/spaces/shezin/Lyrics_to_CoverArt" target="_blank" rel="noopener noreferrer" class="btn live-demo">Live Demo</a>
+      </div>
+    </div>
 
     <!-- Multi-Agent Chatbot -->
     <div class="project-card">
@@ -173,7 +212,7 @@
       </div>
     </div>
 
-    <!-- Tomato Leaf Disease Detection -->
+    <!-- Temporarily hidden project: Tomato Leaf Disease Detection
     <div class="project-card">
       <h3>Tomato Leaf Disease Detection</h3>
       <p>CNN-based classification of tomato leaf diseases using transfer learning with ResNet18, MobileNetV2, and VGG16.</p>
@@ -188,6 +227,7 @@
         <a href="https://github.com/aswiinraviprakash/TomatoLeafDiseaseCNN" target="_blank" class="btn ghost">View Code</a>
       </div>
     </div>
+    -->
 
     <!-- TrainERAI -->
     <div class="project-card">
@@ -252,7 +292,7 @@
       </div>
     </div>
 
-    <!-- Quad Squad -->
+    <!-- Temporarily hidden project: Quad Squad - Chat Room Web Application
     <div class="project-card">
       <h3>Quad Squad - Chat Room Web Application</h3>
       <p>Real-time chatroom app with live message tracking and unique room IDs for different chat rooms.</p>
@@ -265,6 +305,7 @@
         <a href="https://github.com/shezin888/Quad-Squad" target="_blank" class="btn ghost">View Live</a>
       </div>
     </div>
+    -->
 
   </div>
 </section>

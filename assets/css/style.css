@@ -259,10 +259,14 @@ section{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
+  width: 100%;
+  max-width: 1200px;
   margin-top: 30px;
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
@@ -307,7 +311,10 @@ section{
 
 .project-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+  margin-top: auto;
+  padding-top: 12px;
 }
 
 .project-links .btn {
@@ -376,6 +383,94 @@ h1 {
 
 .about-text strong {
   color: #fff;
+}
+
+.experience-heading {
+  margin: 18px 0 10px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.experience-roadmap {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  margin: 0 0 14px;
+  padding: 2px 0 2px 22px;
+  list-style: none;
+}
+
+.experience-roadmap::before {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 4px;
+  width: 2px;
+  background: linear-gradient(#2dd4bf, #60a5fa, rgba(96, 165, 250, .25));
+  content: "";
+}
+
+.experience-stop {
+  position: relative;
+  min-width: 0;
+}
+
+.experience-stop::before {
+  position: absolute;
+  top: 4px;
+  left: -22px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #0b0f17;
+  border-radius: 50%;
+  background: #60a5fa;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, .35);
+  content: "";
+}
+
+.experience-stop.current::before {
+  background: #2dd4bf;
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, .25);
+}
+
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  color: #9fb0c7;
+  font-size: 12px;
+}
+
+.experience-status {
+  padding: 2px 7px;
+  border-radius: 999px;
+  color: #06221e;
+  background: #2dd4bf;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.experience-stop h4 {
+  margin: 3px 0;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.about-text .experience-org,
+.about-text .experience-note {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.about-text .experience-org {
+  color: #dbe6f3;
+}
+
+.about-text .experience-note {
+  color: #9fb0c7;
 }
 
 .about-badges span {
